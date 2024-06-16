@@ -1,27 +1,38 @@
-﻿using Object.Mother.AutoFixture.App;
+﻿using AutoFixture;
+using Object.Mother.AutoFixture.App;
 
 namespace Object.Mother.AutoFixture.Test.Fixtures
 {
     public class UserMother
     {
+        private static Fixture _fixture = new Fixture();
+
         public static User UserUnderEighteen()
         {
-            return User.Create("Pepito Grillo", 16);
+            return _fixture.Build<User>()
+                            .With(u => u.Age, 16)
+                            .Create();
         }
 
         public static User UserOverEighteenUnderThirty()
         {
-            return User.Create("Pepito Grillo", 29);
+            return _fixture.Build<User>()
+                            .With(u => u.Age, 29)
+                            .Create();
         }
 
         public static User UserOverThirtyUnderSixtyFive()
         {
-            return User.Create("Pepito Grillo", 46);
+            return _fixture.Build<User>()
+                            .With(u => u.Age, 46)
+                            .Create();
         }
 
         public static User UserOverSixtyFive()
         {
-            return User.Create("Pepito Grillo", 67);
+            return _fixture.Build<User>()
+                            .With(u => u.Age, 67)
+                            .Create();
         }
     }
 }
