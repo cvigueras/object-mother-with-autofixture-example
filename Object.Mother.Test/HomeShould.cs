@@ -3,7 +3,7 @@ using Object.Mother.AutoFixture.Test.Fixtures;
 
 namespace Object.Mother.AutoFixture.Test
 {
-    public partial class UserShould
+    public class HomeShould
     {
         private Home home;
         [SetUp]
